@@ -1,0 +1,17 @@
+name: C Build Example
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6  # Clones your code to the runner
+
+      - name: Compile C program
+        run: gcc test.c -o hello  # Uses the pre-installed GCC compiler
+
+      - name: Run C program
+        run: ./hello Test of execution
